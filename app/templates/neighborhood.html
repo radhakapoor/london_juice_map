@@ -8,22 +8,29 @@
       body { height: 100%; margin: 0; padding: 0 }      
       #map-canvas { height: 100% } 
       h1 {
-      	margin-left: 50px;        
+      	margin-left: 50px;
       	font-family: 'Raleway', sans-serif;
       	font-size: 40px;
-      	color: #33CC33;}                   
+      	color: #33CC33;}     
       h2 {
       	margin-left: 50px;
       	font-family: 'Raleway', sans-serif;
       	font-size: 17px;
-      	color: #000000;}
-      h3 {
-        font-family: 'Raleway', sans-serif;}             
+      	color: #0099ff;}      
       nav {      	
       	background-color: #33CC33;
       	height: 4px;}
       a {
-      	color: #000000;}      
+      	color: #000000;}
+
+      #dropdown-wrapper {
+        font-family: 'Raleway', sans-serif;
+        font-size: 15px;
+        color: #0099ff;
+        margin-left: 1100px;
+        padding-top: 10px
+      }
+             
     </style>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiYbxd3duyyAZx9qj6HRqKqyRrycF-uho">
@@ -57,9 +64,9 @@
 	}
 
 	function initialize() {
-      	var myLatlng = new google.maps.LatLng(51.5072, -0.1275);
+      	var myLatlng = new google.maps.LatLng(51.510727, -0.202555);
         var mapOptions = {          
-          zoom: 13,
+          zoom: 15,
           center: myLatlng
         }
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
@@ -86,12 +93,29 @@
   				ga('send', 'pageview');
 	</script>
   </head>
-  <body>  
+  <body>
+  <div id="fb-root"></div>
+  <div id="fb-root"></div>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> 
   <header>
   	<nav>  	
-  </nav>  
-  <h1>LONDON JUICE BARS</h1>  
-  <h2>Find organic and cold pressed juices on London's first Juice Map! More useful info coming soon... <a href="mailto:radha@radhakapoor.net">Contact</a> us with questions and feedback... </h2>     
+  </nav>
+  <div class="fb-share-button" data-href="http://londonjuicebars.com/"></div>
+  <div id="dropdown-wrapper">BROWSE BY NEIGHBOURHOOD
+  <select name="neighborhoods">
+    <option value="Notting Hill">Notting Hill</option>
+    <option value="Mayfair">Mayfair</option>
+    <option value="Soho">Soho</option>
+  </select> 
+  </div>       
+  <h1>LONDON JUICE BARS</h1>     
   </header>   	 	 	
     <div id="map-canvas"/>       
   </body>
