@@ -6,7 +6,7 @@ juicebars = [('The Juice Well', 51.512845, -0.134020, '4 Peter Street, Soho, Lon
 by_neighbourhood = {'Soho':[('The Juice Well','4 Peter Street, Soho, London W1F 0DN', '+44 20 7439 9399'), ('Juice Tonic Organic Juicery', '3 Winnett Street, Soho, London W1D 6JY', '+44 20 7434 3706'),('MOJO Juice Bar & Cafe','8 D\'Arblay Street, W1F 8DP', '+44 20 8001 6520')],'West End':[('Juice Club at Selfridges','400 Oxford Street, London W1A 1AB')], 'Marylebone':[('Roots and Bulbs','5 Thayer Street, Marylebone, London W1U 3JG', '')], 'Mayfair':[('Imbibery London at Mount Street Deli','100 Mount Street, W1K 2TG', '+44 20 7499 6843')], 'Covent Garden':[('Lab Organic','58 Neal Street, Covent Garden, London WC2H 9PA'),('Blend & Press','16a Neal\'s Yard, Covent Garden, London WC2H 9DP', '+44 20 3119 5966')], 'Chelsea':[('The Good Life Eatery','59 Sloane Avenue London SW3 3DH','+44 20 7052 9388'), ('Imbibery London at The Box Boutique','104 Draycott Avenue, SW3 3AE', '')], 'Shoreditch': [('Lovage','100 Shoreditch High Street, London EC 6JQ')], 'Camden':[('Goldies Fresh Projuice','The Fitness Mosaic, 81-84 Chalk Farm Road, London, NW1 8AR')], 'Notting Hill':[('Raw Press at Wolf & Badger','Wolf & Badger, 46 Ledbury Road, London W11 2AB', ''), ('Elixir Juicery','Urban Bliss, 333 Portobello Road, Notting Hill, London W10 5SA',''), ('Planet Organic','42 Westbourne Grove, London W2 5SH', '+44 20 7727 2227','')],'Tower Bridge':[('Juice Club at Maltby Street Food Market, Maltby Street, London SE1 3PA', '', '', '')]}
 
 
-@app.route('/londonjuicemap')
+@app.route('/')
 def index():	
 	return render_template("index.html", juicebars = json.dumps(juicebars))
 
