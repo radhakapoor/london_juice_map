@@ -10,52 +10,52 @@ by_neighbourhood = {'Soho':[('The Juice Well','4 Peter Street, Soho, London W1F 
 def index():	
 	return render_template("index.html", juicebars = json.dumps(juicebars))
 
-@app.route('/notting hill')
+@app.route('/notting hill/')
 def notting_hill():	
 	neighbourhoods = [('Notting Hill', 51.515095, -0.201228, 15)]	
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(neighbourhoods[0][1]), lng=json.dumps(neighbourhoods[0][2]), zoom=json.dumps(neighbourhoods[0][3]), neighbourhood_name=neighbourhoods[0][0], by_neighbourhood=by_neighbourhood['Notting Hill'])
 
-@app.route('/soho')
+@app.route('/soho/')
 def soho():
 	neighbourhoods = [('Soho', 51.512845, -0.134020, 16)]	
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(neighbourhoods[0][1]), lng=json.dumps(neighbourhoods[0][2]), zoom=json.dumps(neighbourhoods[0][3]), neighbourhood_name=neighbourhoods[0][0], by_neighbourhood=by_neighbourhood['Soho'])
 
-@app.route('/mayfair')
+@app.route('/mayfair/')
 def mayfair():
 	neighbourhoods = [('Mayfair', 51.512413, -0.145555, 16)]	
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(neighbourhoods[0][1]), lng=json.dumps(neighbourhoods[0][2]), zoom=json.dumps(neighbourhoods[0][3]), neighbourhood_name=neighbourhoods[0][0], by_neighbourhood=by_neighbourhood['Mayfair'])
 
-@app.route('/marylebone')
+@app.route('/marylebone/')
 def marylebone():
 	neighbourhoods = [('Marylebone', 51.517697, -0.151675, 16)]	
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(neighbourhoods[0][1]), lng=json.dumps(neighbourhoods[0][2]), zoom=json.dumps(neighbourhoods[0][3]), neighbourhood_name=neighbourhoods[0][0], by_neighbourhood=by_neighbourhood['Marylebone'])
 
-@app.route('/camden')
+@app.route('/camden/')
 def camden():
 	neighbourhoods = [('Camden', 51.5410, -0.1433, 15)]	
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(neighbourhoods[0][1]), lng=json.dumps(neighbourhoods[0][2]), zoom=json.dumps(neighbourhoods[0][3]), neighbourhood_name=neighbourhoods[0][0], by_neighbourhood=by_neighbourhood['Camden'])
 
-@app.route('/chelsea')
+@app.route('/chelsea/')
 def chelsea():
 	neighbourhoods = [('Chelsea', 51.485120, -0.174707, 15)]	
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(neighbourhoods[0][1]), lng=json.dumps(neighbourhoods[0][2]), zoom=json.dumps(neighbourhoods[0][3]), neighbourhood_name=neighbourhoods[0][0], by_neighbourhood=by_neighbourhood['Chelsea'])
 
-@app.route('/westend')
+@app.route('/westend/')
 def west_end():
 	neighbourhoods = [('West End', 51.514310, -0.149700, 16)]	
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(neighbourhoods[0][1]), lng=json.dumps(neighbourhoods[0][2]), zoom=json.dumps(neighbourhoods[0][3]), neighbourhood_name=neighbourhoods[0][0], by_neighbourhood=by_neighbourhood['West End'])
 
-@app.route('/towerbridge')
+@app.route('/towerbridge/')
 def tower_bridge():
 	neighbourhoods = [('Tower Bridge', 51.504185, -0.076322, 15)]	
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(neighbourhoods[0][1]), lng=json.dumps(neighbourhoods[0][2]), zoom=json.dumps(neighbourhoods[0][3]), neighbourhood_name=neighbourhoods[0][0], by_neighbourhood=by_neighbourhood['Tower Bridge'])
 
-@app.route('/shoreditch')
+@app.route('/shoreditch/')
 def shoreditch():
 	neighbourhoods = [('Shoreditch', 51.523447, -0.077107, 16)]	
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(neighbourhoods[0][1]), lng=json.dumps(neighbourhoods[0][2]), zoom=json.dumps(neighbourhoods[0][3]), neighbourhood_name=neighbourhoods[0][0], by_neighbourhood=by_neighbourhood['Shoreditch'])
 
-@app.route('/coventgarden')
+@app.route('/coventgarden/')
 def covent_garden():
 	neighbourhoods = [('Covent Garden', 51.513180, -0.121726, 16)]	
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(neighbourhoods[0][1]), lng=json.dumps(neighbourhoods[0][2]), zoom=json.dumps(neighbourhoods[0][3]), neighbourhood_name=neighbourhoods[0][0], by_neighbourhood=by_neighbourhood['Covent Garden'])
