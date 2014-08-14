@@ -42,7 +42,7 @@ def chelsea():
 
 @app.route('/westend/')
 def west_end():
-	neighbourhoods = [('West End', 51.514310, -0.149700, 16)]	
+	neighbourhoods = [('the West End', 51.514310, -0.149700, 16)]	
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(neighbourhoods[0][1]), lng=json.dumps(neighbourhoods[0][2]), zoom=json.dumps(neighbourhoods[0][3]), neighbourhood_name=neighbourhoods[0][0], by_neighbourhood=by_neighbourhood['West End'])
 
 @app.route('/towerbridge/')
