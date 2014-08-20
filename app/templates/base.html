@@ -2,53 +2,56 @@
 
 <html lang="en">
   <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">    
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }      
-      #map-canvas { height: 100% } 
-      h1 {
-      	margin-left: 40px;
-      	margin-top: 8px;
-      	font-family: 'Raleway', sans-serif;
-      	font-size: 40px;      	
-      	color: #33CC33;}
-      .btn-group {
-        font-family: 'Raleway', sans-serif;               
-        margin-top: 10px;
-        margin-left: 1100px;} 
-      .btn {
-        background-color: #ffffff;
-        border-color: #33CC33;}        
-</style>     
+    
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
+    <link href="/static/css/site-specific.css" rel="stylesheet">       
+  </head>
+
 	<body>
-<header>
-    <nav>   
-  </nav>
-  <div class="btn-group">
-    <button data-toggle="dropdown" class="btn dropdown-toggle">Browse by Neighbourhood <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a href="{{ url_for('notting_hill') }}">Notting Hill</a></li>        
-        <li><a href="{{ url_for('marylebone') }}">Marylebone</a></li>
-        <li><a href="{{ url_for('west_end') }}">West End</a></li>
-        <li><a href="{{ url_for('mayfair') }}">Mayfair</a></li>
-        <li><a href="{{ url_for('soho') }}">Soho</a></li>
-        <li><a href="{{ url_for('covent_garden') }}">Covent Garden</a></li>
-        <li><a href="{{ url_for('chelsea') }}">Chelsea</a></li>
-        <li><a href="{{ url_for('camden') }}">Camden</a></li>
-        <li><a href="{{ url_for('shoreditch') }}">Shoreditch</a><li>
-        <li><a href="{{ url_for('tower_bridge') }}">Tower Bridge</a><li>
-        <li><a href="{{ url_for('index') }}">All</a><li>
-      </ul>
-  </div>  
-                  
-  <h1>LONDON JUICE BARS</h1>  
- </header>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>          
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">                                  
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Juice by Neighbourhood<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="{{ url_for('notting_hill') }}">Notting Hill</a></li>        
+                <li><a href="{{ url_for('marylebone') }}">Marylebone</a></li>
+                <li><a href="{{ url_for('west_end') }}">West End</a></li>
+                <li><a href="{{ url_for('mayfair') }}">Mayfair</a></li>
+                <li><a href="{{ url_for('soho') }}">Soho</a></li>
+                <li><a href="{{ url_for('covent_garden') }}">Covent Garden</a></li>
+                <li><a href="{{ url_for('chelsea') }}">Chelsea</a></li>
+                <li><a href="{{ url_for('camden') }}">Camden</a></li>
+                <li><a href="{{ url_for('shoreditch') }}">Shoreditch</a><li>
+                <li><a href="{{ url_for('tower_bridge') }}">Tower Bridge</a><li>
+                <li><a href="{{ url_for('index') }}">All</a><li>
+              </ul>
+            </li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
+        </div><!--.nav-collapse-->
+      </div>
+    </div>
+         
+        <h1 class="logo"><a href="{{ url_for('index') }}">LONDON JUICE BARS</a></h1>  
+   
+
  	{% block content %}{% endblock %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
 	</body>
  </html>

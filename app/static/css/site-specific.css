@@ -1,0 +1,67 @@
+      html { height: 100% }
+
+      body { height: 100%; margin: 0; padding: 0 }
+
+      #map-canvas { height: 100% } 
+
+      h1 {
+      	margin-left: 40px;
+      	margin-top: 80px;
+      	font-family: 'Raleway', sans-serif;
+      	font-size: 40px;      	
+      	color: #33CC33;} 
+
+      h2 {
+        font-family: 'Raleway', sans-serif;        
+        color: #33CC33;}
+      
+      p {
+        font-family: 'Raleway', sans-serif;}      
+      
+
+      h3 {
+        font-family: 'Raleway', sans-serif;}
+
+      h4 {
+        font-family: 'Raleway', sans-serif;
+        margin-left: 40px;}
+
+      p {
+        font-family: 'Raleway', sans-serif;} 
+
+       #neighbourhood_name {        
+        padding-bottom: 15px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 24px;                
+        color: #B25812;}      
+              
+      .col-md-4 {        
+        font-family: 'Raleway', sans-serif;
+        font-size: 15px;
+        margin-left: 30px}                     
+              
+
+      a, a:hover {
+        color: #33CC33;
+        text-decoration: none;}   
+
+      .navbar {
+        background-color: #33B833;
+        font-family: 'Raleway', sans-serif;}
+
+      .navbar .nav > li > a {        
+        color: #ffffff;}        
+
+      .navbar-inverse .navbar-nav > .open >a:hover, .navbar-inverse .navbar-nav > .open >a:focus, .navbar-inverse .navbar-nav > .open >a  {
+        background-color: #33B833;}
+      
+      
+
+      
+      
+      
+      
+
+
+
+      

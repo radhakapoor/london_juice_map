@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+name: {{ name }}
+
+address: {{ address }}
+
+phone number: {{ phone_number }}
+
+{% for review in reviews %}
+{{ review }}
+
+
+
+{% endblock %}
