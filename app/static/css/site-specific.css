@@ -57,9 +57,9 @@
       .navbar-inverse .navbar-nav > .open >a:hover, .navbar-inverse .navbar-nav > .open >a:focus, .navbar-inverse .navbar-nav > .open >a  {
         background-color: #33B833;}
 
-      .dropdown-menu > li > a {
+      .dropdown-menu>li> a {
         color: #000000;
-        
+        font-weight: 900;        
       }
       
       
