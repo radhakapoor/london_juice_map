@@ -51,15 +51,29 @@
         font-family: 'Raleway', sans-serif;}
 
       .navbar .nav > li > a {        
-        color: #ffffff;
-        }        
+        color: #ffffff;}
 
+      .navbar .nav > li > a:hover {        
+        color: #B25812;}
+        
       .navbar-inverse .navbar-nav > .open >a:hover, .navbar-inverse .navbar-nav > .open >a:focus, .navbar-inverse .navbar-nav > .open >a  {
         background-color: #33B833;}
 
+      .navbar-inverse .navbar-nav > .open >a:hover {
+        color: #B25812;}
+
+      .dropdown-menu {
+        background-color: #33B833;}
+      
       .dropdown-menu>li> a {
-        color: #000000;               
-      }
+        color: #000000;}                 
+      
+      .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+        color: #ffffff;
+        background-color: #33B833;}
+            
+      .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+        color: #B25812;}
       
       
 
