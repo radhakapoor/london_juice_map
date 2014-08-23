@@ -78,14 +78,12 @@ def post_juicebar():
 	return render_template("add_juicebar2.html", name=name)
 
 by_id = {1:{'name':'Juice Well', 'address': 'Oxford Street', 'phone_number': 442074399399}, 
-			2:{'name':'Juice WellTWO', 'address': 'Oxford StreetTWO', 'phone_number': 442074343706 ,}}
+			2:{'name':'Juice WellTWO', 'address': 'Oxford StreetTWO', 'phone_number': 442074343706}}
 @app.route('/juicebar/<int:id>')
 def juicebar(id):
 	j = by_id[id]
 	reviews = get_reviews(j['phone_number'])
 	return render_template("juicebar.html", name=j['name'], address=j['address'], phone_number=j['phone_number'], reviews=reviews)
-
-
 
 # def get_reviews(phone_number):
 # 	  params = {
