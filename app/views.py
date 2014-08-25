@@ -72,18 +72,24 @@ def contact():
 def get_juicebar():	
 	return render_template("add_juicebar2.html")
 
+@app.route('/instagram/')
+def instagram():
+	return render_template("instagram.html")
+
 @app.route('/addjuicebar/', methods=['POST'])
 def post_juicebar():
 	name=request.form['name']	
 	return render_template("add_juicebar2.html", name=name)
 
-by_id = {1:{'name':'Juice Well', 'address': 'Oxford Street', 'phone_number': 442074399399}, 
-			2:{'name':'Juice WellTWO', 'address': 'Oxford StreetTWO', 'phone_number': 442074343706}}
-@app.route('/juicebar/<int:id>')
-def juicebar(id):
-	j = by_id[id]
-	reviews = get_reviews(j['phone_number'])
-	return render_template("juicebar.html", name=j['name'], address=j['address'], phone_number=j['phone_number'], reviews=reviews)
+by_name = {1:{'name_url': 'juicetonic', 'name': "Juice Tonic", 'address': 'Soho', 'phone_number': '+44 207 439 9399', 'instagram_tag': 'juicetonic'}, 
+			2:{'name_url': 'rootsandbulbs', 'name': 'Roots and Bulbs', 'address': 'Soho2', 'phone_number': '+44 207 434 3706', 'instagram_tag': 'rootsandbulbs'}}
+
+@app.route('/juicebar/<int:id>/<name>')
+def juicebar(id, name):	
+	j = by_name[id]
+	name = j['name_url']
+	instagram_tag = j['instagram_tag']	
+	return render_template("juicebar.html", name=j['name'], address=j['address'], phone_number=j['phone_number'], instagram_tag=json.dumps(instagram_tag))
 
 # def get_reviews(phone_number):
 # 	  params = {
