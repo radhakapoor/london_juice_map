@@ -27,16 +27,16 @@
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Juice by Neighbourhood<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="{{ url_for('notting_hill') }}">Notting Hill</a></li>        
-                <li><a href="{{ url_for('marylebone') }}">Marylebone</a></li>
-                <li><a href="{{ url_for('west_end') }}">West End</a></li>
-                <li><a href="{{ url_for('mayfair') }}">Mayfair</a></li>
-                <li><a href="{{ url_for('soho') }}">Soho</a></li>
-                <li><a href="{{ url_for('covent_garden') }}">Covent Garden</a></li>
-                <li><a href="{{ url_for('chelsea') }}">Chelsea</a></li>
-                <li><a href="{{ url_for('camden') }}">Camden</a></li>
-                <li><a href="{{ url_for('shoreditch') }}">Shoreditch</a><li>
-                <li><a href="{{ url_for('tower_bridge') }}">Tower Bridge</a><li>
+                <li><a href="{{ url_for('neighbourhood', id=2, neighbourhood='notting hill') }}">Notting Hill</a></li>        
+                <li><a href="{{ url_for('neighbourhood', id=4, neighbourhood='marylebone') }}">Marylebone</a></li>
+                <li><a href="{{ url_for('neighbourhood', id=7, neighbourhood='westend') }}">West End</a></li>
+                <li><a href="{{ url_for('neighbourhood', id=3, neighbourhood='mayfair') }}">Mayfair</a></li>
+                <li><a href="{{ url_for('neighbourhood', id=1, neighbourhood='soho') }}">Soho</a></li>
+                <li><a href="{{ url_for('neighbourhood', id=10, neighbourhood='covent garden') }}">Covent Garden</a></li>
+                <li><a href="{{ url_for('neighbourhood', id=6, neighbourhood='chelsea') }}">Chelsea</a></li>
+                <li><a href="{{ url_for('neighbourhood', id=5, neighbourhood='camden') }}">Camden</a></li>
+                <li><a href="{{ url_for('neighbourhood', id=9, neighbourhood='shoreditch') }}">Shoreditch</a><li>
+                <li><a href="{{ url_for('neighbourhood', id=8, neighbourhood='towerbridge') }}">Tower Bridge</a><li>
                 <li><a href="{{ url_for('index') }}">All</a><li>
               </ul>
             </li>

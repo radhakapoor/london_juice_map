@@ -72,14 +72,13 @@
       <h2 id="neighbourhood_name">{{neighbourhood_name}} </h2>  
   
   {% for bar in neighbourhood_bars %}
-  {{ bar[0] }}
+  <!--{{ bar }}-->
+  <a href="{{ url_for ('juicebar', id=bar, name=by_name[bar]['name']) }}">{{ by_name[bar]['name'] }}</a>
   <br>
-  {{ bar[1] }}
+  {{ by_name[bar]['address'] }}
   <br>
-  {{ bar[2] }}
-  <br>
-  {{ bar[3] }} 
-  <br>   
+  {{ by_name[bar]['phone_number'] }}
+  <br>  
   {% endfor %}
       </div>      
         <div id="map-canvas"/> 
