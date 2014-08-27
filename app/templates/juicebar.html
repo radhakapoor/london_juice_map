@@ -39,7 +39,7 @@ $(document).ready(function() {
     			}
     		} else {
 
-    			$("#target").append("I couldn't find anything!");
+    			$("#target").append("Sadly, we couldn't find any images for this juice bar :(");
     		}
     	} else {
     		
@@ -60,19 +60,25 @@ $(document).ready(function() {
 
 <div class="col-md-3">
 
+	<p class="juicebar_name">
+	{{ name }}
+	</p>
+	<p id="instagram">
+	# {{ instagram }}
+	</p>
 	<h4>
-	Name: {{ name }} 
+	{{ address }}
 	<br>
 	<br>
-
-	Address: {{ address }}
+	{{ phone_number }}
 	<br>
-	<br>
-
-	Phone Number: {{ phone_number }}
-	<br>
+	<br>	
+	Reviews and more deets coming soon!	
 	<br>
 	</h4>
+	
+
+
 </div>
 
 	<div class="col-md-8"

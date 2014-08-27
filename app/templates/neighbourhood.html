@@ -69,15 +69,16 @@
   </head>  
   
       <div class="col-md-4">
-      <h2 id="neighbourhood_name">{{neighbourhood_name}} </h2>  
+      <h2> {{neighbourhood_name}} </h2>  
   
   {% for bar in neighbourhood_bars %}
   <!--{{ bar }}-->
-  <a href="{{ url_for ('juicebar', id=bar, name=by_name[bar]['name']) }}">{{ by_name[bar]['name'] }}</a>
+  <a id ="juicebar_a" href="{{ url_for ('juicebar', id=bar, name=by_name[bar]['name_url']) }}">{{ by_name[bar]['name'] }}</a>
   <br>
   {{ by_name[bar]['address'] }}
   <br>
   {{ by_name[bar]['phone_number'] }}
+  <br>
   <br>  
   {% endfor %}
       </div>      

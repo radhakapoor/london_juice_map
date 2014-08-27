@@ -13,11 +13,7 @@
 
       h2 {
         font-family: 'Raleway', sans-serif;        
-        color: #33CC33;}
-      
-      p {
-        font-family: 'Raleway', sans-serif;}      
-      
+        color: #33CC33;}            
 
       h3 {
         font-family: 'Raleway', sans-serif;}
@@ -29,18 +25,35 @@
       p {
         font-family: 'Raleway', sans-serif;} 
 
-       #neighbourhood_name {        
+      .juicebar_name {
+        font-family: 'Raleway', sans-serif; 
+        font-size: 24px;
+        margin-left: 40px;
+        color: #B25812;}
+
+      #instagram {
+        font-family: 'Raleway', sans-serif; 
+        font-size: 22px;
+        margin-left: 40px;
+        color: #B25812;}               
+      
+       /*.neighbourhood_name {        
         padding-bottom: 15px;
         font-family: 'Raleway', sans-serif;
         font-size: 24px;                
-        color: #B25812;}      
-              
+        color: #B25812;} */
+
+      .col-md-3 {
+        margin-top: 30px;}
+                   
       .col-md-4 {        
         font-family: 'Raleway', sans-serif;
         color: #000000;
-        font-size: 15px;
-        margin-left: 30px}                     
-              
+        font-size: 16px;
+        margin-left: 30px} 
+
+      .col-md-8 {
+        margin-top: 30px;}                       
 
       a, a:hover {
         color: #33CC33;
@@ -75,6 +88,14 @@
       .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
         color: #B25812;}
 
+      #juicebar_a {
+        color: #33B833;        
+      }
+
+      #juicebar_a:hover {
+        color: #B25812;        
+        text-decoration: underline;
+      }
       
 
       
