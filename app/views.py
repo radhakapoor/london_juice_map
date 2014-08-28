@@ -1,6 +1,19 @@
 import json
-from flask import render_template, url_for, request
+from flask import render_template, url_for, request, session
 from app import app
+import os
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+
+
+engine = 'postgresql+psycopg2://rkapoor:sham22@localhost/londonjuicebars_app'
+app.config['SQLALCHEMY_DATABASE_URI'] = engine
+
+Session = sessionmaker(bind=engine)
+session = Session()
+
+app.secret_key = 'meangreens'
 
 
 juicebars = [('The Juice Well', 51.512845, -0.134020, '4 Peter Street, Soho, London W1F 0DN', 'http://thejuicewell.hk', '+44 20 7439 9399'), ('Roots and Bulbs', 51.517697, -0.151675, '5 Thayer Street, Marylebone, London W1U 3JG', 'http://www.rootsandbulbs.com', ''), ('Juice Tonic Organic Juicery', 51.512152, -0.133273, '3 Winnett Street, Soho, London W1D 6JY', 'http://www.juicetonic.com', '+44 20 7434 3706'), ('Lab Organic', 51.514754, -0.126025, '58 Neal Street, Covent Garden, London WC2H 9PA', 'http://laborganic.co.uk', ''), ('The Good Life Eatery', 51.491950, -0.165379, '59 Sloane Avenue London SW3 3DH', 'http://www.goodlifeeatery.com', '+44 20 7052 9388'), ('Lovage', 51.525744, -0.077237, '100 Shoreditch High Street, London EC 6JQ', 'http://www.acehotel.com/london/lovage', ''), ('Goldies Fresh Projuice', 51.541899, -0.146058, 'The Fitness Mosaic, 81-84 Chalk Farm Road, London, NW1 8AR', 'http://goldiesfreshprojuice.com', ''), ('Raw Press at Wolf & Badger Notting Hill', 51.514122, -0.198761, 'Wolf & Badger, 46 Ledbury Road, London W11 2AB', 'http://www.rawpress.co', ''), ('Elixir Juicery', 51.521371, -0.210583, 'Urban Bliss, 333 Portobello Road, Notting Hill, London W10 5SA', 'http://www.elixirjuicery.com', ''), ('Imbibery London at Mount Street Deli', 51.509753, -0.150542, '100 Mount Street, W1K 2TG', 'http://www.imbiberylondon.com', '+44 20 7499 6843'), ('Imbibery London at The Box Boutique', 51.493665, -0.167818, '104 Draycott Avenue, SW3 3AE', 'http://www.imbiberylondon.com', ''), ('Planet Organic', 51.515546, -0.191101, '42 Westbourne Grove, London W2 5SH', 'http://www.planetorganic.com', '+44 20 7727 2227'), ('Blend & Press', 51.514561, -0.126364, '16a Neal\'s Yard, Covent Garden, London WC2H 9DP', 'http://blendandpress.com', '+44 20 3119 5966'), ('MOJO Juice Bar & Cafe', 51.514745, -0.136000, '8 D\'Arblay Street, W1F 8DP', '+44 20 8001 6520'), ('Juice Club at Maltby Street Food Market', 51.499629, -0.076117, 'Maltby Street, London SE1 3PA', 'http://juice-club.co.uk', ''), ('Juice Club at Selfridges', 51.514205, -0.152800, '400 Oxford Street, London W1A 1AB', 'http://juice-club.co.uk', ''), ('Raw Press at Wolf & Badger Mayfair', 51.509038, -0.142922, '32 Dover Street, London, W1S 4NE', 'http://www.rawpress.co', ''), ('Press', 51.510752, -0.134808, '6 Denman Street, Ham Yard Hotel, London W1D 7HD', 'http://press-london.com', '')]
@@ -57,25 +70,21 @@ def neighbourhood(id, neighbourhood):
 	zoom = j['zoom']		
 	return render_template("neighbourhood.html", juicebars = json.dumps(juicebars), lat=json.dumps(latitude), lng=json.dumps(longitude), zoom=json.dumps(zoom), neighbourhood_name=j['neighbourhood_name'], neighbourhood_bars=j['bars'], by_name=by_name)
 
-@app.route('/addjuicebar/', methods=['GET'])
-def get_juicebar():	
-	return render_template("add_juicebar2.html")
-
-@app.route('/instagram/')
-def instagram():
-	return render_template("instagram.html")
-
-@app.route('/addjuicebar/', methods=['POST'])
-def post_juicebar():
-	name=request.form['name']	
-	return render_template("add_juicebar2.html", name=name)
-
 @app.route('/juicebar/<int:id>/<name>')
 def juicebar(id, name):	
 	j = by_name[id]			
 	name = j['name_url']	
 	instagram_tag = j['instagram_tag']	
 	return render_template("juicebar.html", name=j['name'], address=j['address'], phone_number=j['phone_number'], instagram=j['instagram_tag'], instagram_tag=json.dumps(instagram_tag), hood=j['neighbourhood'], by_id=by_id)
+
+@app.route('/addjuicebar/', methods=['GET'])
+def get_juicebar():	
+	return render_template("add_juicebar.html")
+
+@app.route('/addjuicebar/', methods=['POST'])
+def post_juicebar():
+	name=request.form['name']	
+	return render_template("add_juicebar.html", name=name)
 
 
 # def get_reviews(phone_number):
