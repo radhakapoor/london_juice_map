@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--Added an additional head tag which is probably a bad idea-->
+<head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+      instagram_tag = {{ instagram_tag|safe }};
+    </script>
+<script type="text/javascript">
+
+
+$(document).ready(function() {		
+
+			var tag = instagram_tag;
+			var count = "15";
+			var client_id = "a95b93f141f94672889731a5f7835a75";
+			var access_parameters = {client_id:client_id};
+		
+
+    	function grabImages(access_parameters) {   	    		
+
+    		var instagramUrl = 'https://api.instagram.com/v1/tags/' + tag + 
+			'/media/recent?callback=?&count='+ count;
+				
+			$.getJSON(instagramUrl, access_parameters, onDataLoaded);
+    	}
+
+    function onDataLoaded(instagram_data) {
+    	if(instagram_data.meta.code == 200) {
+
+    		var photos = instagram_data.data;
+
+    		if(photos.length > 0) {
+
+    			for (var key in photos ){
+    				var photo = photos[key];
+    				$("#target").append('<img src="' + photo.images.low_resolution.url + '">');
+    			}
+    		} else {
+
+    			$("#target").append("Sadly, we couldn't find any images for this juice bar :(");
+    		}
+    	} else {
+    		
+    		$("#target").append("Something happened");
+
+    	}
+
+    }
+
+    grabImages(access_parameters);
+
+	});
+
+
+</script>
+
+</head>
+
+<div id="back_container">
+See other delish places to get <a id="juicebar_a" href="{{ url_for ('neighbourhood_update', url=n_url(spot.neighbourhood)) }}">juice in {{ spot.neighbourhood }}</a>
+</div>
+
+<div class="col-md-3">
+
+	<p class="juicebar_name">
+	{{ spot.name }}
+	</p>
+	<p id="instagram">
+	# {{ spot.instagram_tag }}
+	</p>
+	<h5>
+	{{ spot.address }}  
+	<br>
+	{% if spot.phone_number %}
+	phone: {{ spot.phone_number }}	
+	{% endif %}
+	</h5>
+	{% if status %}		
+	<p class="status">
+	{{ status }} today
+	</p>
+	{% endif %}	
+	<h5>	
+	{% for key in opening_d %} 
+	{{ key }}: {{opening_d[key]}}	
+	<br>	
+	{% endfor %} 		
+	<br>						
+	<div>
+	{% if tips_l %}
+	<img src="/static/img/poweredByFoursquare.png" />
+	</div>	
+	<div class="foursquare_tips">Tips & Reviews</div>	
+	<br>		
+	{% for t in tips_l %}
+	"{{ t }}"
+	<br>
+	<br>
+	{% endfor %}
+	<br>	
+	{% endif %}		
+	</h5>
+
+
+</div>
+
+	<div class="col-md-9"
+
+	<div id="target"></div>
+
+	</div>
+
+
+	
+{% endblock %}

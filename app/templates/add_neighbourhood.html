@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<h2 class="admin_heading">Neighbourhood Admin</h2>
+<br>
+  
+<form action="" method='post'>
+  <input type='string' name='name' id='name' placeholder='Name (Soho)'>
+  <br>
+  <br>
+
+  <input type='string' name='url' id='url' placeholder='URL (soho)'>
+  <br>
+  <br>
+
+  <input type='numeric' name='lat' id='lat' placeholder='Latitude'>
+  <br>
+  <br>
+
+  <input type='numeric' name='lng' id='lng' placeholder='Longitude'>
+  <br>
+  <br>
+
+<input type='integer' name='zoom' id='zoom' placeholder='Zoom'>
+  <br>
+  <br>
+  
+  <input type='submit' value='submit'>
+
+</form>
+</div>
+<br>
+<div class="bar_container">
+{% for n in neighbourhoods %}
+NAME: {{ n.name }}
+<br>
+URL: {{ n.url }}
+<br>
+LATITUDE: {{ n.lat }}
+<br>
+LONGITUDE: {{ n.lng }}
+<br>
+ZOOM: {{ n.zoom }}
+<br>
+<br>
+{% endfor %}
+</div>
+
+	
+
+{% endblock %}

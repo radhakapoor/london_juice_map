@@ -22,8 +22,21 @@
         font-family: 'Raleway', sans-serif;
         margin-left: 40px;}
 
+      h5 {
+        font-family: 'Raleway', sans-serif;
+        margin-left: 40px;}
+
       p {
-        font-family: 'Raleway', sans-serif;} 
+        font-family: 'Raleway', sans-serif;}
+
+      input {
+        width: 375px;
+        height: 35px;
+        margin-left: 20px;}
+      
+      select {
+        width: 375px;        
+        margin-left: 20px;}
 
       .juicebar_name {
         font-family: 'Raleway', sans-serif; 
@@ -31,9 +44,13 @@
         margin-left: 40px;
         color: #B25812;}
 
+      .admin_heading {
+        margin-left: 20px;}
+
+      
       #instagram {
         font-family: 'Raleway', sans-serif; 
-        font-size: 22px;
+        font-size: 20px;
         margin-left: 40px;
         color: #B25812;}               
       
@@ -43,8 +60,10 @@
         font-size: 24px;                
         color: #B25812;} */
 
+
       .col-md-3 {
-        margin-top: 30px;}
+        margin-top: 30px;
+        }
                    
       .col-md-4 {        
         font-family: 'Raleway', sans-serif;
@@ -52,8 +71,11 @@
         font-size: 16px;
         margin-left: 30px} 
 
-      .col-md-8 {
-        margin-top: 30px;}                       
+      /*.col-md-8 {
+        margin-top: 30px;} */       
+
+      .col-md-9 {
+        margin-top: 20px;}                              
 
       a, a:hover {
         color: #33CC33;
@@ -89,14 +111,33 @@
         color: #B25812;}
 
       #juicebar_a {
-        color: #33B833;        
-      }
-
+        color: #33B833;}        
+      
       #juicebar_a:hover {
         color: #B25812;        
-        text-decoration: underline;
-      }
+        text-decoration: underline;}
+
+      #back_container {
+        font-family: 'Raleway', sans-serif;
+        font-size:15px;
+        float: right;
+        margin-left: 40px;
+        margin-right: 100px;
+        padding-bottom: 10px;}        
+
+      .foursquare_tips {
+        color: #B25812;
+        font-family: 'Raleway', sans-serif; 
+        font-size: 18px;}       
       
+      .status {
+        font-family: 'Raleway', sans-serif;
+        font-size:15px;
+        color: #33CC33;
+        margin-left: 40px;
+      }
+
+
 
       
 
