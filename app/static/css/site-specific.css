@@ -123,7 +123,15 @@
         float: right;
         margin-left: 40px;
         margin-right: 100px;
-        padding-bottom: 10px;}        
+        padding-bottom: 10px;}
+
+      #website_link {
+        color: #000000;}        
+      
+      #website_link:hover {
+        color: #B25812;        
+        text-decoration: underline;}        
+      }              
 
       .foursquare_tips {
         color: #B25812;

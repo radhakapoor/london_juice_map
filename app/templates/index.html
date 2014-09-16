@@ -9,6 +9,8 @@
       juicebars = {{juicebars|safe}};
     </script>
 
+    {{ flask_util_js.js }}
+
     <script type="text/javascript">
       
         function createMarkerClickListener(map, marker, juicebarName, juicebarAddress, juicebarSite, juicebarPhone) {
@@ -18,10 +20,10 @@
           '</div>'+
           '<h3 id="firstHeading" class="firstHeading">' + juicebarName+'</h3>'+
           '<div id="bodyContent">'+
-          '<p>'+juicebarAddress +      
-          '<p><a href='+juicebarSite+'>'+
-          juicebarSite+'</a></p>'+
+          '<p>'+juicebarAddress +'<p>'+                    
           juicebarPhone+ '</p>'+
+          '<a href='+flask_util.url_for('juicebar_update', {url:juicebarSite})+'>'+
+          'More Details'+'</a><p>'+
           '</div>'+
           '</div>';
 

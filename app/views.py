@@ -7,6 +7,7 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+
 engine = 'postgresql+psycopg2://rkapoor:sham22@localhost/londonjuicebars_app'
 app.config['SQLALCHEMY_DATABASE_URI'] = engine
 
@@ -28,7 +29,7 @@ def index():
 	bars_list = []
 	bars=Juicebar.query.all()
 	for bar in bars:
-		bars_t = (bar.name, float(bar.lat), float(bar.lng), bar.address, bar.website, bar.phone_number)
+		bars_t = (bar.name, float(bar.lat), float(bar.lng), bar.address, bar.url, bar.phone_number)
 		bars_list.append(bars_t)	
 	return render_template("index.html", juicebars = json.dumps(bars_list))
 
@@ -47,7 +48,7 @@ def neighbourhood_update(url):
 	bars_list = []
 	bars=Juicebar.query.all()
 	for bar in bars:
-		bars_t = (bar.name, float(bar.lat), float(bar.lng), bar.address, bar.website, bar.phone_number)
+		bars_t = (bar.name, float(bar.lat), float(bar.lng), bar.address, bar.url, bar.phone_number)
 		bars_list.append(bars_t)
 	lat=float(hood.lat)
 	lng=float(hood.lng)
@@ -119,10 +120,11 @@ def post_juicebar():
 	website=request.form['website']
 	phone_number=request.form['phone_number']
 	instagram_tag=request.form['instagram_tag']
+	foursquare_id = request.form['foursquare']
 	neighbourhood=request.form['neighbourhood']	
-	bar=Juicebar(name=name, url=url, lat=lat, lng=lng, address=address, website=website, phone_number=phone_number, instagram_tag=instagram_tag, neighbourhood=neighbourhood)	
+	bar=Juicebar(name=name, url=url, lat=lat, lng=lng, address=address, website=website, phone_number=phone_number, instagram_tag=instagram_tag, foursquare=foursquare_id, neighbourhood=neighbourhood)	
 	db.session.add(bar)
 	db.session.commit()
-	return render_template("juicebars_submitted.html", name=name, url=url, lat=lat, lng=lng, address=address, website=website, phone_number=phone_number, instagram_tag=instagram_tag, neighbourhood=neighbourhood)
+	return render_template("juicebars_submitted.html", name=name, url=url, lat=lat, lng=lng, address=address, website=website, phone_number=phone_number, instagram_tag=instagram_tag, foursquare=foursquare_id, neighbourhood=neighbourhood)
 
 

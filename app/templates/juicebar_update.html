@@ -74,12 +74,16 @@ See other delish places to get <a id="juicebar_a" href="{{ url_for ('neighbourho
 	{{ spot.address }}  
 	<br>
 	{% if spot.phone_number %}
-	phone: {{ spot.phone_number }}	
+	{{ spot.phone_number }}	
+	<br>
+	{% endif %}
+	{% if spot.website %}
+	<a id="website_link" href="{{ spot.website }}" target="_blank">Website</a> 	
 	{% endif %}
 	</h5>
 	{% if status %}		
 	<p class="status">
-	{{ status }} today
+	Today: {{ status }} 
 	</p>
 	{% endif %}	
 	<h5>	

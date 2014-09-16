@@ -35,7 +35,7 @@ class Juicebar(db.Model):
 	neighbourhood = db.Column(String)
 	foursquare = db.Column(String)
 
-	def __init__(self, name, url, lat, lng, address, website, phone_number, instagram_tag, neighbourhood):
+	def __init__(self, name, url, lat, lng, address, website, phone_number, instagram_tag, neighbourhood, foursquare):
 		self.name = name
 		self.url = url
 		self.lat = lat
@@ -45,7 +45,8 @@ class Juicebar(db.Model):
 		self.phone_number = phone_number
 		self.instagram_tag = instagram_tag
 		self.neighbourhood = neighbourhood
+		self.foursquare = foursquare
 
 	def __repr__(self):
-		return '<Juicebar name is {}, url is {}, lat is {}, lng is {}, address is {}, website is {}, phone_number is {}, instagram tag is {}, is in the neighbourhood of {}'.format(self.name, self.url, self.lat, self.lng, self.address, self.website, self.phone_number, self.instagram_tag, self.neighbourhood)
+		return '<Juicebar name is {}, url is {}, lat is {}, lng is {}, address is {}, website is {}, phone_number is {}, instagram tag is {}, foursquare id is {}, is in the neighbourhood of {}'.format(self.name, self.url, self.lat, self.lng, self.address, self.website, self.phone_number, self.instagram_tag, self.foursquare, self.neighbourhood)
 
