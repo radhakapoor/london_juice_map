@@ -1,0 +1,1 @@
+export DATABASE_URL=postgresql+psycopg2://rkapoor:sham22@localhost/londonjuicebars_app
