@@ -50,3 +50,15 @@ class Juicebar(db.Model):
 	def __repr__(self):
 		return '<Juicebar name is {}, url is {}, lat is {}, lng is {}, address is {}, website is {}, phone_number is {}, instagram tag is {}, foursquare id is {}, is in the neighbourhood of {}'.format(self.name, self.url, self.lat, self.lng, self.address, self.website, self.phone_number, self.instagram_tag, self.foursquare, self.neighbourhood)
 
+# class Admin(db.Model):
+# 	__tablename__='admin'
+# 	id = db.Column(Integer, primary_key=True)
+# 	name = db.Column(String)
+# 	password = db.Column(String)
+
+# 	def __init__(self, name, password):
+# 		self.name = name
+# 		self.password = password
+
+# 	def __repr__(self):
+# 		return '<Admin name is {} and password is {}'.format(self.name, self.password)

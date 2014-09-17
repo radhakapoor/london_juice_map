@@ -6,15 +6,26 @@ from models import Neighbourhood, Juicebar
 import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from flask.ext.basicauth import BasicAuth
 
-
-engine = 'postgresql+psycopg2://rkapoor:sham22@localhost/londonjuicebars_app'
+#engine = 'postgresql+psycopg2://rkapoor:sham22@localhost/londonjuicebars_app'
+#app.config['SQLALCHEMY_DATABASE_URI'] = engine
+engine = os.environ['DATABASE_URL']
 app.config['SQLALCHEMY_DATABASE_URI'] = engine
 
 Session = sessionmaker(bind=engine)
 session = Session()
 
 app.secret_key = 'meangreens'
+
+#admin_access=Admin.query.all()
+#username=Admin.username
+#password=Admin.password
+
+app.config['BASIC_AUTH_USERNAME'] = 'radhakapoor'
+app.config['BASIC_AUTH_PASSWORD'] = '4268'
+
+basic_auth = BasicAuth(app)
 
 def neigbourhood_url_from_neighbourhood_name(name):
 	name = name.replace(" ","")
@@ -89,11 +100,13 @@ def juicebar_update(url):
 	return render_template("juicebar_update.html", spot=spot, instagram_tag=json.dumps(instagram_tag), tips_l=tips_l, status=status, opening_d=opening_d) 
 
 @app.route('/addneighbourhood/', methods=['GET'])
+@basic_auth.required
 def get_neighbourhood():
 	neighbourhoods=Neighbourhood.query.all()
 	return render_template("add_neighbourhood.html", neighbourhoods=neighbourhoods)
 
 @app.route('/addneighbourhood/', methods=['POST'])
+@basic_auth.required
 def post_neighbourhood():
 	name=request.form['name']
 	url=request.form['url']
@@ -106,11 +119,13 @@ def post_neighbourhood():
 	return render_template("neighbourhood_submitted.html", name=name, url=url, lat=lat, lng=lng, zoom=zoom)
 
 @app.route('/addjuicebar/', methods=['GET'])
+@basic_auth.required
 def get_juicebar():
 	bars=Juicebar.query.all()
 	return render_template("add_juicebar.html", bars=bars)
 
 @app.route('/addjuicebar/', methods=['POST'])
+@basic_auth.required
 def post_juicebar():
 	name=request.form['name']
 	url=request.form['url']
