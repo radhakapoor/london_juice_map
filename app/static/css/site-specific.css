@@ -111,7 +111,8 @@
         color: #B25812;}
 
       #juicebar_a {
-        color: #33B833;}        
+        color: #33B833;
+        text-decoration: underline;}        
       
       #juicebar_a:hover {
         color: #B25812;        
