@@ -7,6 +7,7 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from flask.ext.basicauth import BasicAuth
+from auth import username, password
 
 #engine = 'postgresql+psycopg2://rkapoor:sham22@localhost/londonjuicebars_app'
 #app.config['SQLALCHEMY_DATABASE_URI'] = engine
@@ -18,12 +19,8 @@ session = Session()
 
 app.secret_key = 'meangreens'
 
-#admin_access=Admin.query.all()
-#username=Admin.username
-#password=Admin.password
-
-app.config['BASIC_AUTH_USERNAME'] = 'radhakapoor'
-app.config['BASIC_AUTH_PASSWORD'] = '4268'
+app.config['BASIC_AUTH_USERNAME'] = username
+app.config['BASIC_AUTH_PASSWORD'] = password
 
 basic_auth = BasicAuth(app)
 
